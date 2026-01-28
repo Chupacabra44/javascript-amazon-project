@@ -59,3 +59,11 @@ export const removeFromCart = (productId) => {
   cart = newCart;
   saveToStorage();
 };
+
+export const calculateCartQuantity = () => {
+  let cartQuantity = 0;
+  cart.forEach((cartItem) => {
+    cartQuantity += cartItem.quantity;
+  });
+  return cartQuantity;
+};

@@ -67,3 +67,32 @@ export const calculateCartQuantity = () => {
   });
   return cartQuantity;
 };
+
+// export const updateQuantity = (productId, newQuantity) => {
+//   cart.forEach((cartItem) => {
+//     if (cartItem.productId === productId) {
+//       cartItem.quantity = newQuantity;
+//       saveToStorage();
+
+//       const quantityLabel = document.querySelector(
+//         `.js-cart-item-container-${productId} .quantity-label`,
+//       );
+//       if (quantityLabel) {
+//         quantityLabel.textContent = newQuantity;
+//       }
+//     }
+//   });
+// };
+
+export const updateQuantity = (productId, newQuantity) => {
+  let matchingItem;
+
+  cart.forEach((cartItem) => {
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+
+  matchingItem.quantity = newQuantity;
+  saveToStorage();
+};

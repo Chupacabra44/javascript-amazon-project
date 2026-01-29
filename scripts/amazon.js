@@ -59,7 +59,6 @@ document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 const updateCartQuantity = (productId) => {
   let cartQuantity = calculateCartQuantity();
-  console.log(cartQuantity);
 
   const addedMessage = document.querySelector(`.js-added-to-cart-${productId}`);
 
